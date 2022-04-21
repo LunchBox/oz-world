@@ -15,12 +15,15 @@ import HelloWorld from '@/components/HelloWorld.vue'
   margin: 0 auto;
   padding: 2rem;
 
-  font-weight: normal;
 }
 
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+[data-icon] {
+  margin-right: 4px;
 }
 
 .logo {
@@ -32,12 +35,13 @@ a,
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
+  color: #69797e;
   transition: 0.4s;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+
   }
 }
 
@@ -73,8 +77,6 @@ nav a:first-of-type {
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
 

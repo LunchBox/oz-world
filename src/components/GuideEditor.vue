@@ -1,48 +1,112 @@
 <script setup>
+
+import { ref, computed } from "vue";
+
+import GuideMap from "./GuideMap.vue";
+import GuideSummary from "./GuideSummary.vue";
+import GuideItem from "./GuideItem.vue";
+import ItemEditor from "./ItemEditor.vue";
+
+const e1 = {
+  title: "DFS第十屆「傳世佳釀」",
+  tag: "其他",
+  date: "1-26/4",
+  address: " DFS旗下澳門T廣場新濠天地店",
+  location: {x: 280, y: 510},
+  desc: "首次登陸澳門的「傳世佳釀」搜羅來自250多位收藏家及65個世界知名品牌的葡萄酒、烈酒及香檳，為品酒愛好者獨家呈獻過百款珍貴佳釀..."
+}
+
+const e2 = {
+  title: "「POP INFINITY」 藝術展覽",
+  tag: "展覽",
+  date: "1-30/4",
+  address: "摩珀斯酒店大堂",
+  location: {x: 270, y: 495},
+  desc: "展出以迪士尼經典角色為創作靈感的系列式藝術裝置，包括五件1.2米高的Snow Angel Mickey雕塑和多個藝術家的限量作品。WF Fashion旗艦店..."
+}
+
+const e3 = {
+  title: "「Olá 土生菜」成果展示工作坊",
+  tag: "工作坊",
+  date: "30/4",
+  address: "葡角餐廳",
+  location: {x: 170, y: 125},
+  desc: "澳門土生菜廚師向精神康復者學員教授土生葡人美食烹飪技藝，學員於成果展示日向公眾現場示範調製土生菜特色飲品，並奉上預先烹飪完成的土生菜..."
+}
+
+const es = [e1, e2, e3];
+
+const c1 = {
+  user: "Daniel Cheang",
+  content: "首次登陸澳門的「傳世佳釀」搜羅來自250多位收藏家及65個世界知名品牌的葡萄酒、烈酒及香檳，為品酒愛好者獨家呈獻過百款珍貴佳釀"
+}
+
+const i1 = {
+  activity: e1,
+  comment: c1
+}
+
+
+const i2 = {
+  activity: e2
+}
+
+const i3 = {
+  activity: e3,
+}
+
+const gl = {
+  title: "文化傳播月 2022",
+  desc: "今年「文化傳播月」帶來六大項目多角度的藝文體驗，包括以美學分享會、藝文工作坊、藝文空間、文化職業的精神等為主題的活動，豐富觀眾對文化和生活的感知，一同把文化的美好帶到四月日常。",
+  items: [i1, i2, i3],
+}
+
+
+const mode = ref("view");
+
+const selected = ref(0);
+
 </script>
 
 <template>
   <div class="container">
     <aside>
-    	<div class="toolbar">
-				<button>
-					<i class="fa-solid fa-plus"></i>
-				</button>
-				<button>
-					<i class="fa-solid fa-minus"></i>
-				</button>
-
-				<button>
-					<i class="fa-solid fa-caret-up"></i>
-				</button>
-				<button>
-					<i class="fa-solid fa-caret-down"></i>
-				</button>
-
-				<button>
-					<i class="fa-solid fa-hand-back-fist"></i>
-				</button>
-
-				<button>
-					<i class="fa-solid fa-location-crosshairs"></i>
-				</button>
-			</div>
-
-			<img src="https://upload.wikimedia.org/wikipedia/commons/0/01/China_Macau_location_map.svg" alt="map">
-
-			<div class="dot" style="left: 170px; top: 125px;">3</div>
-			<div class="dot" style="left: 270px; top: 495px;">2</div>
-			<div class="dot active" style="left: 280px; top: 510px;">1</div>
-
-			<div class="red-dot-wrapper">
-				<div class="red-dot"></div>
-				<div class="red-dot" style="margin: 12px 0 0 12px; zoom: 1.6;"></div>
-				<div class="red-dot" style="margin: 18px 0 0 2px;zoom: 0.5"></div>
-				<div class="red-dot" style="margin: 4px 0 0 6px; zoom: 0.8"></div>
-				<div class="red-dot" style="margin: 8px 0 0 0px; zoom: 1.2"></div>
-				<div class="red-dot" style="margin: 4px 0 0 12px;"></div>
-			</div>
+      <GuideMap :items="es" />
     </aside>
+    <main>
+      <div class="guide-actions">
+        <div v-if="mode == 'view'">
+          <a href="" @click.prevent="mode = 'edit'">
+            <i class="fa-solid fa-pencil"></i>
+            編輯行程
+          </a>
+          <a href="" @click.prevent="mode = 'guide'">
+            <i class="fa-solid fa-shoe-prints"></i>
+            現在出發
+          </a>
+        </div>
+        <div v-if="mode != 'view'">
+          <a href="" @click.prevent="mode = 'view'">
+            <i class="fa-solid fa-check"></i>
+            完成
+          </a>
+        </div>
+      </div>
+
+      <div style="padding: 10px;">
+        <GuideSummary :guide="gl" />
+        <GuideItem 
+          v-for="(item, idx) in gl.items" 
+          :item="item" 
+          :index="idx" 
+          :selected="idx === selected"
+          :mode="mode"
+          @click="selected = idx"
+          />
+
+        <ItemEditor v-if="mode == 'edit'" />
+      </div>
+    </main>
   </div>
 </template>
 
@@ -53,7 +117,7 @@
     LiHei Pro Medium, WenQuanYi Micro Hei, sans-serif;
   }
 
-  #container {
+  .container {
     line-height: 1.5em;
     border: 1px solid #333;
     position: relative;
@@ -62,5 +126,18 @@
     color: #69797e;
 
     font-size: 15px;
+  }
+</style>
+
+<style scoped>
+  .guide-actions {
+    background: #efefef;
+    padding: 10px;
+  }
+
+  .guide-actions a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 0.5em;
   }
 </style>
