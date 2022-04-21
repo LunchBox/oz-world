@@ -1,41 +1,62 @@
 <script setup>
+  import { ref } from "vue";
   const props = defineProps({
-    activity: Object
-  })
+    activity: Object,
+    mode: String
+  });
+
+  
+  const selected = ref(false)
 </script>
 
 <template>
-	<div class="activity">
-		<div class="header">
-      <h2>{{ activity.title }}</h2>
-		</div>
+  <div @click="selected = !selected">
+    <div class="activity">
+      <div class="header">
+        <h2>{{ activity.title }}</h2>
+      </div>
 
-		<div class="meta tags">
-			<i class="fa-solid fa-tag"></i>
-      {{ activity.tag }}
-		</div>
+      <div class="meta tags">
+        <i class="fa-solid fa-tag"></i>
+        {{ activity.tag }}
+      </div>
 
-		<div class="meta addr">
-			<i class="fa-solid fa-calendar"></i>
-      {{ activity.date }} &middot;
-			<i class="fa-solid fa-location-dot"></i>
-      {{ activity.address }}
-		</div>
+      <div class="meta addr">
+        <i class="fa-solid fa-calendar"></i>
+        {{ activity.date }} &middot;
+        <i class="fa-solid fa-location-dot"></i>
+        {{ activity.address }}
+      </div>
 
-		<div>
-      {{ activity.desc }}
-		</div>
+      <div>
+        {{ activity.desc }}
+      </div>
 
-		<div class="status">
-			<i class="fa-solid fa-heart"></i>
-      {{ Math.round(Math.random() * 1000) }}
+      <div class="status">
+        <i class="fa-solid fa-heart"></i>
+        {{ Math.round(Math.random() * 1000) }}
 
-			<div style="margin-left: auto;">
-				40條路線
-				10次分享
-			</div>
-		</div>
-	</div>
+        <div style="margin-left: auto;">
+          40條路線
+          10次分享
+        </div>
+      </div>
+    </div>
+    <div v-if="mode == 'guide' || selected" class="actions">
+      <a href="">
+        <i class="fa-solid fa-check"></i>
+        打卡
+      </a>
+      <a href="">
+        <i class="fa-solid fa-message"></i>
+        回應
+      </a>
+      <a href="">
+        <i class="fa-solid fa-share"></i>
+        分享
+      </a>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -69,4 +90,13 @@
 	.meta.addr {
 		margin-bottom: 0.5em;
 	}
+
+  .actions {
+    display: flex;
+    padding: 10px;
+  }
+  .actions * {
+    flex: 1;
+    text-align: center;
+  }
 </style>

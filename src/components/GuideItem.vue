@@ -24,25 +24,11 @@
       </div>
     </div>
     <div class="item-main">
-      <ActivitySummary :activity="item.activity" v-if="selected"/>
+      <ActivitySummary :activity="item.activity" v-if="selected" :mode="mode"/>
       <div v-else class="item-header">
         <h2>{{ item.activity.title }}</h2>
       </div>
 
-      <div v-if="selected && guiding" class="item-actions">
-        <a href="">
-          <i class="fa-solid fa-check"></i>
-          打卡
-        </a>
-        <a href="">
-          <i class="fa-solid fa-message"></i>
-          回應
-        </a>
-        <a href="">
-          <i class="fa-solid fa-share"></i>
-          分享
-        </a>
-      </div>
 
       <div v-if="selected && item.comment" style="margin-top: 10px;">
         <Comment :comment="item.comment" />
@@ -120,13 +106,5 @@
   font-size: 18px;
 }
 
-.item-actions {
-  display: flex;
-  padding: 10px;
-}
-.item-actions * {
-  flex: 1;
-  text-align: center;
-}
 
 </style>
