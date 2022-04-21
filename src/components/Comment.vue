@@ -9,7 +9,7 @@
 		<div>
 			<i class="fa-solid fa-user"></i>
       <b>{{ comment.user }}: </b>
-      {{ comment.content }}
+      <span class="text">{{ comment.content }}</span>
 		</div>
 
 		<div class="status">
@@ -23,11 +23,11 @@
 		</div>
 		<div class="comment-actions">
       <a href="">
-        <i class="fa-solid fa-thumbs-up"></i>
+        <i class="fa-regular fa-thumbs-up"></i>
         讚好
       </a>
       <a href="">
-        <i class="fa-solid fa-message"></i>
+        <i class="fa-regular fa-message"></i>
         回應
       </a>
       <a href="">
@@ -48,6 +48,9 @@ b {
 	border: 1px solid #ccc;
 	border-radius: 2px;
   padding: 10px;
+}
+
+.text {
 }
 
 .status {

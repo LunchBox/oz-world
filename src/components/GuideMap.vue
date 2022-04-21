@@ -1,6 +1,7 @@
 <script setup>
   const props = defineProps({
-    items: Array
+    items: Array,
+    selected: Number,
   })
 </script>
 
@@ -33,7 +34,7 @@
     </div>
 
 
-    <div v-for="(e, idx) in items" :key="idx" class="dot" :style="{left: e.location.x + 'px', top: e.location.y + 'px'}">{{ idx + 1}}</div>
+    <div v-for="(e, idx) in items" :key="idx" class="dot" :class="{active: idx == selected}" :style="{left: e.location.x + 'px', top: e.location.y + 'px'}">{{ idx + 1}}</div>
   </div>
 </template>
 
@@ -82,11 +83,17 @@ img {
   font-size: 12px;
 
   color: #ccc;
+
+  transform: translate(-50%, -50%);
 }
 
 .dot.active {
   border-color: orange;
   background: orange;
   color: #fff;
+
+  width: 24px;
+  height: 24px;
+  z-index: 10;
 }
 </style>

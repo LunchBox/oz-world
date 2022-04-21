@@ -37,8 +37,8 @@
         {{ Math.round(Math.random() * 1000) }}
 
         <div style="margin-left: auto;">
-          40條路線
-          10次分享
+          {{ Math.round(Math.random() * 10) }}條路線
+          {{ Math.round(Math.random() * 10) }}次分享
         </div>
       </div>
     </div>
@@ -48,8 +48,12 @@
         打卡
       </a>
       <a href="">
-        <i class="fa-solid fa-message"></i>
-        回應
+        <i class="fa-regular fa-heart"></i>
+        想去
+      </a>
+      <a href="">
+        <i class="fa-regular fa-message"></i>
+        留言
       </a>
       <a href="">
         <i class="fa-solid fa-share"></i>

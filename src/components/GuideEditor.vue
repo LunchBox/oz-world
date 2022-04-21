@@ -38,7 +38,7 @@ const es = [e1, e2, e3];
 
 const c1 = {
   user: "Daniel Cheang",
-  content: "首次登陸澳門的「傳世佳釀」搜羅來自250多位收藏家及65個世界知名品牌的葡萄酒、烈酒及香檳，為品酒愛好者獨家呈獻過百款珍貴佳釀"
+  content: "首次登陸澳門的「傳世佳釀」搜羅來自250多位收藏家及65個世界知名品牌的葡萄酒、烈酒及香檳，為品酒愛好者獨家呈獻過百款珍貴佳釀..."
 }
 
 const i1 = {
@@ -57,6 +57,7 @@ const i3 = {
 
 const gl = {
   title: "文化傳播月 2022",
+  user: "Daniel Cheang",
   desc: "今年「文化傳播月」帶來六大項目多角度的藝文體驗，包括以美學分享會、藝文工作坊、藝文空間、文化職業的精神等為主題的活動，豐富觀眾對文化和生活的感知，一同把文化的美好帶到四月日常。",
   items: [i1, i2, i3],
 }
@@ -71,9 +72,9 @@ const selected = ref(0);
 <template>
   <div class="container">
     <aside>
-      <GuideMap :items="es" />
+      <GuideMap :items="es" :selected="selected"/>
     </aside>
-    <main>
+    <main style="display: flex; flex-direction: column;">
       <div class="guide-actions">
         <div v-if="mode == 'view'">
           <a href="" @click.prevent="mode = 'edit'">
@@ -84,6 +85,10 @@ const selected = ref(0);
             <i class="fa-solid fa-shoe-prints"></i>
             現在出發
           </a>
+          <a href="" @click.prevent>
+            <i class="fa-solid fa-plus"></i>
+            創建新的路線
+          </a>
         </div>
         <div v-if="mode != 'view'">
           <a href="" @click.prevent="mode = 'view'">
@@ -93,7 +98,7 @@ const selected = ref(0);
         </div>
       </div>
 
-      <div style="padding: 10px;">
+      <div style="flex: 1; padding: 10px; overflow-y: scroll;">
         <GuideSummary :guide="gl" />
         <GuideItem 
           v-for="(item, idx) in gl.items" 
@@ -126,6 +131,13 @@ const selected = ref(0);
     color: #69797e;
 
     font-size: 15px;
+
+    height: 821px;
+    box-sizing: content-box;
+  }
+
+  img {
+    max-height: 100%;
   }
 </style>
 
