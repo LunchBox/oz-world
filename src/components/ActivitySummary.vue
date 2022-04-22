@@ -41,13 +41,17 @@
         <i class="fa-solid fa-heart"></i>
         {{ Math.round(Math.random() * 1000) }}
 
+        &nbsp;
+        <i class="fa-regular fa-message"></i>
+        {{ Math.round(Math.random() * 1000) }}
+
+
         <div style="margin-left: auto;">
           {{ Math.round(Math.random() * 10) }}條路線
-          {{ Math.round(Math.random() * 10) }}次分享
         </div>
       </div>
     </div>
-    <div v-if="!noActions && (mode == 'guide' || selected)" class="actions">
+    <div v-if="false && !noActions && (mode == 'guide' || selected)" class="actions">
       <a href="">
         <i class="fa-regular fa-heart"></i>
         想去

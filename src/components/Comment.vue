@@ -20,7 +20,7 @@
 				40個回應
 			</div>
 		</div>
-		<div class="comment-actions">
+		<div v-if="false" class="comment-actions">
       <a href="">
         <i class="fa-regular fa-thumbs-up"></i>
         讚好
