@@ -52,7 +52,7 @@ const e1 = {
 
 h2 {
   font-weight: bold;
-  margin: 1em 0;
+  margin-bottom: 0.5em;
 }
 
 label {
@@ -62,11 +62,27 @@ label {
 textarea{
 	width: 100%;
 	height: 6em;
-	border: 1px solid #ccc;
+	border: 2px solid;
 	border-radius: 2px;
 
 	box-sizing: border-box;
 
-	font-size: 15px;
+	font-size: 16px;
+}
+
+input {
+	border: 2px solid;
+	border-radius: 2px;
+
+  font-size: 16px;
+}
+
+button {
+	border: 2px solid;
+	border-radius: 2px;
+  background: #fff;
+
+  font-size: 16px;
+  
 }
 </style>
