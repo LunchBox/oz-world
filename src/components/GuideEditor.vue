@@ -12,7 +12,7 @@ const e1 = {
   tag: "其他",
   date: "1-26/4",
   address: " DFS旗下澳門T廣場新濠天地店",
-  location: {x: 280, y: 510},
+  location: {x: 55, y: 63},
   desc: "首次登陸澳門的「傳世佳釀」搜羅來自250多位收藏家及65個世界知名品牌的葡萄酒、烈酒及香檳，為品酒愛好者獨家呈獻過百款珍貴佳釀..."
 }
 
@@ -21,7 +21,7 @@ const e2 = {
   tag: "展覽",
   date: "1-30/4",
   address: "摩珀斯酒店大堂",
-  location: {x: 270, y: 495},
+  location: {x: 53, y: 61},
   desc: "展出以迪士尼經典角色為創作靈感的系列式藝術裝置，包括五件1.2米高的Snow Angel Mickey雕塑和多個藝術家的限量作品。WF Fashion旗艦店..."
 }
 
@@ -30,7 +30,7 @@ const e3 = {
   tag: "工作坊",
   date: "30/4",
   address: "葡角餐廳",
-  location: {x: 170, y: 125},
+  location: {x: 34, y: 19},
   desc: "澳門土生菜廚師向精神康復者學員教授土生葡人美食烹飪技藝，學員於成果展示日向公眾現場示範調製土生菜特色飲品，並奉上預先烹飪完成的土生菜..."
 }
 
@@ -129,6 +129,8 @@ const selected = ref(0);
     line-height: 1.5em;
     border: 2px solid;
     position: relative;
+    width: 100%;
+    height: 100%;
 
     display: flex;
     color: #69797e;
@@ -137,7 +139,6 @@ const selected = ref(0);
     font-size: 16px;
     line-height: 1.63;
 
-    height: 821px;
     box-sizing: content-box;
   }
 

@@ -11,10 +11,14 @@ import HelloWorld from '@/components/HelloWorld.vue'
 @import '@/assets/base.css';
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
 
+  position: absolute;
+  top: 4em;
+  left: 4em;
+  right: 4em;
+  bottom: 4em;
 }
 
 header {
@@ -73,12 +77,10 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    position: relative;
   }
 
   #app {
-    padding: 0 2rem;
   }
 
   header {

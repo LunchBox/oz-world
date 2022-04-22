@@ -31,13 +31,26 @@
     </div>
 
 
-    <div v-for="(e, idx) in items" :key="idx" class="dot" :class="{active: idx == selected}" :style="{left: e.location.x + 'px', top: e.location.y + 'px'}">{{ idx + 1}}</div>
+    <div 
+      v-for="(e, idx) in items" 
+      :key="idx" 
+      class="dot" 
+      :class="{active: idx == selected}" 
+      :style="{left: e.location.x + '%', top: e.location.y + '%'}">
+      {{ idx + 1}}
+    </div>
   </div>
 </template>
 
 <style scoped>
+
+.map {
+  height: 100%;
+}
+
 img {
   display: block;
+  height: 100%;
 }
 
 .toolbar {
