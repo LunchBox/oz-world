@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import ActivitySummary from "./ActivitySummary.vue";
 
 const e1 = {
@@ -9,6 +10,9 @@ const e1 = {
   location: {x: 280, y: 510},
   desc: "本地著名文創市集「塔石藝墟」舉辦至今已踏入第14年，每年分為春季和秋季兩期。今年春季塔石藝墟由每周舉辦3日增至4日..."
 }
+
+const showRes = ref(false);
+
 </script>
 
 <template>
@@ -17,7 +21,22 @@ const e1 = {
     <form action="">
       <div class="input-field">
         <label for="">地點或活動</label>
-        <ActivitySummary :activity="e1" />
+
+        <div v-if="!showRes" style="display: flex; align-items: center;">
+          <input type="text" value="塔石"/>
+          <button @click.prevent="showRes = true;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div v-if="showRes" style="display: flex;">
+          <ActivitySummary :activity="e1" :noActions="true" />
+          <div style="margin-left: 10px;">
+            <a href="" @click.prevent="showRes=false">
+              <i class="fa-solid fa-xmark"></i>
+            </a>
+          </div>
+        </div>
       </div>
       <div class="input-field">
         <label for="">介紹</label>

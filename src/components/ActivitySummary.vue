@@ -2,7 +2,8 @@
   import { ref } from "vue";
   const props = defineProps({
     activity: Object,
-    mode: String
+    mode: String,
+    noActions: Boolean
   });
 
   
@@ -14,8 +15,8 @@
     <div class="activity">
       <div class="header">
         <h2>{{ activity.title }}</h2>
-        <a href="" class="btn" style="margin-left: auto; ">
-          <i class="fa-solid fa-check"></i>
+        <a v-if="!noActions" href="" class="btn" style="margin-left: auto; ">
+          <i class="fa-solid fa-bullseye"></i>
           打卡
         </a>
       </div>
@@ -46,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div v-if="mode == 'guide' || selected" class="actions">
+    <div v-if="!noActions && (mode == 'guide' || selected)" class="actions">
       <a href="">
         <i class="fa-regular fa-heart"></i>
         想去
@@ -105,7 +106,7 @@
 
   .btn {
     border: 2px solid;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 4px 10px;
+    border-radius: 2px;
   }
 </style>

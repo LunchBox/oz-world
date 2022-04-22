@@ -81,10 +81,6 @@ const selected = ref(0);
             <i class="fa-solid fa-pencil"></i>
             編輯行程
           </a>
-          <a href="" @click.prevent="mode = 'guide'">
-            <i class="fa-solid fa-shoe-prints"></i>
-            現在出發
-          </a>
           <a href="" @click.prevent>
             <i class="fa-solid fa-plus"></i>
             創建新的路線
