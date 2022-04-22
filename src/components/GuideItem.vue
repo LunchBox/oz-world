@@ -45,12 +45,10 @@
 <style scoped>
 .item {
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 2px;
   padding: 0.5em;
+  border: 2px solid;
 
   display: flex;
-  align-items: baseline;
 
   position: relative;
 }
@@ -83,17 +81,15 @@
 
 
 .dot {
-  width: 24px;
-  height: 24px;
+	width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #ccc;
+  border: 2px solid;
   border-radius: 50%;
   background: #fff;
-  font-size: 12px;
 
-  color: #ccc;
 }
 
 .item.active .dot {
@@ -101,9 +97,9 @@
   background: orange;
   color: #fff;
 
-	width: 36px;
-  height: 36px;
   font-size: 18px;
+
+  margin-top: 0.5em;
 }
 
 

@@ -120,17 +120,22 @@ const selected = ref(0);
     font-family: Noto Sans, Helvetica Neue, Helvetica, Arial, Microsoft JhengHei,
     MingLiU_HKSCS-ExtB, PMingLiU, PingFang HK, Apple LiGothic Medium,
     LiHei Pro Medium, WenQuanYi Micro Hei, sans-serif;
+
+    font-weight: bold;
+    color: #000;
   }
 
   .container {
     line-height: 1.5em;
-    border: 1px solid #333;
+    border: 2px solid;
     position: relative;
 
     display: flex;
     color: #69797e;
+    color: #000;
 
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.63;
 
     height: 821px;
     box-sizing: content-box;

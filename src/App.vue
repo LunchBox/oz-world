@@ -36,6 +36,7 @@ a,
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   color: #69797e;
+  color: #000;
   transition: 0.4s;
 }
 

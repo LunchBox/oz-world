@@ -16,7 +16,6 @@
       <button>
         <i class="fa-solid fa-minus"></i>
       </button>
-
       <button>
         <i class="fa-solid fa-caret-up"></i>
       </button>
@@ -24,9 +23,7 @@
         <i class="fa-solid fa-caret-down"></i>
       </button>
 
-      <button>
-        <i class="fa-solid fa-hand-back-fist"></i>
-      </button>
+      &nbsp;
 
       <button>
         <i class="fa-solid fa-location-crosshairs"></i>
@@ -50,10 +47,9 @@ img {
 }
 
 .toolbar button {
-  border: 1px solid #ccc;
+  border: 2px solid;
   background: #fff;
 
-  color: #ccc;
   width: 24px;
   height: 24px;
   display: flex;
@@ -62,6 +58,8 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 12px;
+
+  margin-bottom: 1px;
 }
 
 .toolbar button [data-icon] {
@@ -77,12 +75,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #ccc;
+  border: 2px solid;
   border-radius: 50%;
   background: #fff;
   font-size: 12px;
-
-  color: #ccc;
 
   transform: translate(-50%, -50%);
 }

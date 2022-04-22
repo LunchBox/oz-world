@@ -40,7 +40,7 @@ const e1 = {
 <style scoped>
 
 .editor {
-  border: 1px solid #ccc;
+  border: 2px solid;
   padding: 10px;
 
   margin-bottom: 6em;

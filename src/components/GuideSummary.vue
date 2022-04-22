@@ -32,9 +32,9 @@
 
 <style scoped>
   h1 {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
-    margin: 1em 0;
+    margin: 0.5em 0;
   }
 
   .actions {

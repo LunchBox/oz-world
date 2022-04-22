@@ -18,7 +18,6 @@
 
 			<div style="margin-left: auto;">
 				40個回應
-				10次分享
 			</div>
 		</div>
 		<div class="comment-actions">
@@ -45,8 +44,7 @@ b {
 }
 
 .comment {
-	border: 1px solid #ccc;
-	border-radius: 2px;
+  border: 2px solid; 
   padding: 10px;
 }
 
@@ -60,7 +58,7 @@ b {
 
 .comment-actions {
   display: flex;
-  border-top: 1px solid #eee;
+  border-top: 2px solid;
   padding-top: 10px;
   margin-top: 10px;
 }

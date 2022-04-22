@@ -14,6 +14,10 @@
     <div class="activity">
       <div class="header">
         <h2>{{ activity.title }}</h2>
+        <a href="" class="btn" style="margin-left: auto; ">
+          <i class="fa-solid fa-check"></i>
+          打卡
+        </a>
       </div>
 
       <div class="meta tags">
@@ -44,10 +48,6 @@
     </div>
     <div v-if="mode == 'guide' || selected" class="actions">
       <a href="">
-        <i class="fa-solid fa-check"></i>
-        打卡
-      </a>
-      <a href="">
         <i class="fa-regular fa-heart"></i>
         想去
       </a>
@@ -65,8 +65,7 @@
 
 <style scoped>
 	.activity {
-		border: 1px solid #ccc;
-		border-radius: 2px;
+    border: 2px solid;
 		padding: 0.5em;
 
 
@@ -102,5 +101,11 @@
   .actions * {
     flex: 1;
     text-align: center;
+  }
+
+  .btn {
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 8px;
   }
 </style>
